@@ -33,10 +33,10 @@ class Date
 
 		//string
 		std::string toString();
-
-		//operator
-		friend bool operator>( Date date,  Date today);
-		
 		
 };
+
+//operator
+friend bool operator>( Date date,  Date today);
+
 #endif
