@@ -1,3 +1,6 @@
+#ifndef DATE_H
+#define DATE_H
+
 #include <iostream>
 #include <stdexcept>
 #include <time.h>
@@ -6,7 +9,7 @@
 class Date
 {
 	private:
-	int d, m, y;  //char o short per d/m?
+	int d, m, y;
 	
 	public:
 		//constructor
@@ -36,3 +39,4 @@ class Date
 		
 		
 };
+#endif
