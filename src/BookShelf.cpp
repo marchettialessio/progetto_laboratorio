@@ -9,11 +9,11 @@ BookShelf::BookShelf(size_t s) : buffer_size_{s}, current_size_{0}, elem_{new Bo
 	if(s == 0){ elem_ = nullptr;}
 }
 
-BookShelf::BookShelf(std::initializer_list<double> lst) : buffer_size_{lst.size()}, current_size_{lst.size()}, elem_ {new Book[lst.size()]}
+/*BookShelf::BookShelf(std::initializer_list<double> lst) : buffer_size_{lst.size()}, current_size_{lst.size()}, elem_ {new Book[lst.size()]}
 {
 	std::copy(lst.begin(), lst.end(), elem_);
 
-}
+}*/
 
 BookShelf::BookShelf(const BookShelf& a) : buffer_size_{a.buffer_size_}, current_size_{a.current_size_}, elem_{new Book[a.buffer_size_]}
 {
@@ -88,7 +88,7 @@ void BookShelf::pop_back()
 {
 	if(current_size_ > 0)
 	{
-		elem_[current_size_--] = 0;
+		elem_[current_size_--] = Book();
 	}
 }
 
