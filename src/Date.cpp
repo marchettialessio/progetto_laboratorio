@@ -2,21 +2,21 @@
 
 Date::Date():d{0},m{0},y{0} {}
 
-Date:: Date(int day, int month, int year){
+Date::Date(int day, int month, int year)
+{
 	set_day(day);
 	set_month(month);
 	set_year(year);
 }
 
-/*Date::Date(const Date& date):d{date.d}, m{date.m}, y{date.y}{
-	std::copy(date.d, date.y, d);
-}*/
-
-Date::Date(std::string s){
-	if(!s.empty()) Date(std::stoi(s.substr(0,1)),std::stoi(s.substr(3,4)),std::stoi(s.substr(6,10)));
+Date::Date(std::string s)
+{
+	if(!s.empty()) 
+	    Date(std::stoi(s.substr(0,1)),std::stoi(s.substr(3,4)),std::stoi(s.substr(6,10)));
 	else Date();
 }
 
+Date::Date(const Date& date):d{date.d}, m{date.m}, y{date.y}{}
 
 void Date::set_day(int day)
 {
@@ -61,9 +61,19 @@ void Date::set_year(int year)
 	y = year;
 }
 
+std::string Date::toString() const
+{
+    std::string d = std::to_string(day());
+    std::string m = std::to_string(month());
+    std::string y = std::to_string(year());
+    std::string slash = "/";
+    
+    return d+slash+m+slash+y;
+}
 
 /*----------------overloading operatore > tra due date-------------------------*/
-bool operator>( Date date, Date today){
+bool operator>(const Date date, const Date today)
+{
 	if(date.year() > today.year()) return true;
 	else if(date.year() == today.year() && date.month() > today.month()) return true;
 	else if(date.year() == today.year() && date.month() == today.month() && date.day() > today.day()) return true;
@@ -73,23 +83,26 @@ bool operator>( Date date, Date today){
 
 
 /*----------------controllo che la data sia valida e non sia successiva ad oggi-------------------------*/
-bool Date::invalidDate(Date date){
+bool Date::invalidDate(const Date& date) const
+{
 	//da true se non valida
-	if(date > today())return true;
+	if(date > today())
+	       return true;
 	return false;
 }
 
 std::ostream& operator<<(std::ostream& os, const Date& date)
 {
-    os << "date[ " << date.d << "/" << date.m << "/" << date.y  << "]";
+    os << "date[ " << date.day() << "/" << date.month() << "/" << date.year()  << "]";
     return os;
 }
 
-Date Date::today(){
+Date Date::today() const
+{
 	time_t data;
 	tm *dataInfo;
-	data=time(NULL); // ottiene l' ora odierna
-	dataInfo=localtime(&data);
+	data = time(NULL); // ottiene l' ora odierna
+	dataInfo = localtime(&data);
 	Date today{dataInfo->tm_mday, dataInfo->tm_mon, dataInfo->tm_year+1900};
 	return today;
 }
