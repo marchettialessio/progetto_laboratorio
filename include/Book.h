@@ -1,45 +1,48 @@
 #ifndef BOOK_H
 #define BOOK_H
 
-#include <iostream>
 #include <string>
+#include <regex>
 #include "Date.h"
 using namespace std;
 
 class Book
 {
 	private:
-		string ISBN_, title_, nAuth_, snAuth_;
-		Date::Date copyright_;
+		string isbn_, title_, nAuth_, snAuth_;
+		Date copyright_;
 		bool available_;
 		
 	
 	public:
 		//constructor
 		Book();
-		Book (string& ISBN_, string& title_, string& nAuth_, string& snAuth_, Date::date& copyright_);
+		Book (const string& isbn_, const string& title_, const string& nAuth_, const string& snAuth_, const Date& copyright_);
+		Book(const string& isbn, const string& title, const string& nAuth, const string& snAuth, const string& copyright);
 		
-		//copy
+		//copy (no move needed)
 		Book(const Book & arg);						
-		Book& operator=(const Book& arg);	
-		
-		//move
-		Book(Book && arg); 						
-		Book operator=(Book&& arg);			
+		Book& operator=(const Book& arg);			
 		
 		//destructor
-		~Book(); 				
-		
+		~Book() = default; 				
+
+		//setting methods
+		void set_isbn(const string& isbn);
+		void set_title(const string& title);
+		void set_nAuth(const string& nAuth);
+		void set_snAuth(const string& snAuth);
+		void set_copyright(const Date& copyright);	
 		
 		//getter methods
-		const string& get_ISBN() const {return ISBN_;}
+		const string& get_isbn() const {return isbn_;}
 		const string& get_title() const {return title_;}
 		const string& get_nAuth() const {return nAuth_;}
 		const string& get_snAuth() const {return snAuth_;}
-		void get_copyright() const {copyright_.toString();} //oppure const riferimento?
-		bool get_available() const {return available_}
+		string get_copyright() const {return copyright_.toString();}
+		bool get_available() const {return available_;}
 	
-		//loan function
+		//loan functions
 		void loan();
 		void give_back();
 		
