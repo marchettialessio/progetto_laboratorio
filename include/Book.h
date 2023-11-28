@@ -1,29 +1,52 @@
-#include <iostream>
-#include <stdexcept>
+#ifndef BOOK_H
+#define BOOK_H
 
-class Date
+#include <iostream>
+#include <string>
+using namespace std;
+
+class Book
 {
 	private:
-	;
+		string ISBN_, title_, nAuth_, snAuth_;
+		Date::Date copyright_;
+		bool available_;
+		
 	
 	public:
 		//constructor
-		Date();
-		Date (int y, int m, int d);
-		static string getDateFromString(string a);
+		Book();
+		Book (string& ISBN_, string& title_, string& nAuth_, string& snAuth_, Date::date& copyright_);
+		
+		//copy
+		Book(const Book & arg);						
+		Book& operator=(const Book& arg);	
+		
+		//move
+		Book(Book && arg); 						
+		Book operator=(Book&& arg);			
+		
+		//destructor
+		~Book(); 				
+		
 		
 		//getter methods
-		int month(void);
-		int day(void);
-		int year(void);
-		
-		//setter methods
-		void set_day(int d);
-		void set_month(int m);
-		void set_year(int y);
-		
-		//string
-		string toString() const;
+		const string& get_ISBN() const {return ISBN_;}
+		const string& get_title() const {return title_;}
+		const string& get_nAuth() const {return nAuth_;}
+		const string& get_snAuth() const {return snAuth_;}
+		void get_copyright() const {copyright_.toString();} //oppure const riferimento?
+		bool get_available() const {return available_}
+	
+		//loan function
+		void loan();
+		void give_back();
 		
 		
 };
+
+bool operator==(const Book &a, const Book &b);
+bool operator!=(const Book &a, const Book &b);
+std::ostream& operator<<(std::ostream& out, const Book &other);
+
+#endif
