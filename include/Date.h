@@ -1,5 +1,7 @@
 #include <iostream>
 #include <stdexcept>
+#include <time.h>
+#include <string>
 
 class Date
 {
@@ -10,7 +12,7 @@ class Date
 		//constructor
 		Date();
 		Date (int y, int m, int d);
-		static string getDateFromString(std::string s);
+		Date(std::string s); //constructor by input string
 		
 		//getter
 		int month(void) {return m;}
@@ -22,8 +24,15 @@ class Date
 		void set_month(int m);
 		void set_year(int y);
 		
+		//helper
+		bool invalidDate(Date date);
+		Date DateCopy(Date date); // deep copy
+
 		//string
-		std::string toString() const;
+		std::string toString();
+
+		//operator
+		friend bool operator>( Date date,  Date today);
 		
 		
 };
