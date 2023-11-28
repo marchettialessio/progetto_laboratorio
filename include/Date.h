@@ -14,13 +14,14 @@ class Date
 	public:
 		//constructor
 		Date();
-		Date (int y, int m, int d);
-		Date(std::string s); //constructor by input string
+		Date(const Date& date);
+		Date(int y, int m, int d);
+		Date(std::string s); 		//constructor by input string
 		
 		//getter
-		int month(void) {return m;}
-		int day(void) {return d;}
-		int year(void) {return y;} 
+		int month(void) const {return m;}
+		int day(void) const {return d;}
+		int year(void) const {return y;} 
 		
 		//setter
 		void set_day(int d);
@@ -28,15 +29,16 @@ class Date
 		void set_year(int y);
 		
 		//helper
-		bool invalidDate(Date date);
-		Date DateCopy(Date date); // deep copy
+		bool invalidDate(const Date& date) const;
+		Date today() const;
 
 		//string
-		std::string toString();
+		std::string toString() const;
 		
 };
 
 //operator
-friend bool operator>( Date date,  Date today);
+bool operator>(const Date date, const Date today);
+std::ostream& operator<<(std::ostream& os, const Date& date);
 
 #endif
