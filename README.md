@@ -14,7 +14,7 @@ Costruzione di una classe *BookShelf* (libreria) che gestisce istanze della clas
 
 
 ## Features
-*All'interno delle classi sono state implementati le opportune funzionionalità e validazioni di input* 
+*All'interno delle classi sono state implementate le opportune funzionionalità e validazioni di input* 
 ___
 - Date: controllo validità giorno, mese, anno
 - Book: Controllo di validita data copyright
