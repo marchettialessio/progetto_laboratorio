@@ -12,7 +12,7 @@ Date::Date(int day, int month, int year)
 Date::Date(std::string s)
 {
 	if(!s.empty()) 
-	    Date(std::stoi(s.substr(0,1)),std::stoi(s.substr(3,4)),std::stoi(s.substr(6,10)));
+	    Date(std::stoi(s.substr(0,2)),std::stoi(s.substr(3,2)),std::stoi(s.substr(6,2)));
 	else Date();
 }
 
