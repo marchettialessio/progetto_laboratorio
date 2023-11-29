@@ -46,7 +46,7 @@ int main(void)
 	}
 	catch(std::invalid_argument ex)
 	{
-	    std::cout << "Initialization error: " << ex.what();;
+	    std::cout << "Initialization error: " << ex.what() << "\n";
 	}
 
 
