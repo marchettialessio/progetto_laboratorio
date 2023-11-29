@@ -1,0 +1,1 @@
+/usr/bin/c++ -fPIC   -shared -Wl,-soname,libprogetto_intermedio.so -o libprogetto_intermedio.so CMakeFiles/progetto_intermedio.dir/src/Date.cpp.o CMakeFiles/progetto_intermedio.dir/src/Book.cpp.o CMakeFiles/progetto_intermedio.dir/src/BookShelf.cpp.o 

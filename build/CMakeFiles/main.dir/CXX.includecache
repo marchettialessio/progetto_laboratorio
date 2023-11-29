@@ -1,0 +1,38 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+../include/Book.h
+string
+-
+regex
+-
+Date.h
+../include/Date.h
+
+../include/BookShelf.h
+initializer_list
+-
+algorithm
+-
+Book.h
+../include/Book.h
+
+../include/Date.h
+iostream
+-
+stdexcept
+-
+time.h
+-
+string
+-
+
+/home/alessio/Desktop/uni/git/progetto_laboratorio/src/main.cpp
+BookShelf.h
+/home/alessio/Desktop/uni/git/progetto_laboratorio/src/BookShelf.h
+

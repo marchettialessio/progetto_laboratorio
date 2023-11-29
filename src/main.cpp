@@ -3,7 +3,7 @@
 int main(void)
 {
 
-	BookShelf shelf = BookShelf(10);
+	BookShelf shelf(10);
     
 	try
 	{

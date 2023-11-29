@@ -1,0 +1,8 @@
+/home/alessio/Desktop/uni/git/progetto_laboratorio/build/CMakeFiles/install/local.dir
+/home/alessio/Desktop/uni/git/progetto_laboratorio/build/CMakeFiles/install.dir
+/home/alessio/Desktop/uni/git/progetto_laboratorio/build/CMakeFiles/list_install_components.dir
+/home/alessio/Desktop/uni/git/progetto_laboratorio/build/CMakeFiles/rebuild_cache.dir
+/home/alessio/Desktop/uni/git/progetto_laboratorio/build/CMakeFiles/edit_cache.dir
+/home/alessio/Desktop/uni/git/progetto_laboratorio/build/CMakeFiles/main.dir
+/home/alessio/Desktop/uni/git/progetto_laboratorio/build/CMakeFiles/install/strip.dir
+/home/alessio/Desktop/uni/git/progetto_laboratorio/build/CMakeFiles/progetto_intermedio.dir

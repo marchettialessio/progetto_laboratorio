@@ -1,7 +1,6 @@
 #ifndef BookShelf_H
 #define BookShelf_H
 
-#include <initializer_list>
 #include <algorithm>
 #include "Book.h"
 
@@ -9,8 +8,7 @@ class BookShelf
 {
 	public:
 		BookShelf();
-		BookShelf(size_t s = kDefaultSize);	
-		//BookShelf(std::initializer_list<double> lst);	
+		BookShelf(size_t s = kDefaultSize);		
 		BookShelf(const BookShelf& arg);	
 		BookShelf(BookShelf&& arg);
 		~BookShelf() {delete[] elem_; }

@@ -5,6 +5,8 @@ project(progetto_intermedio)
 include_directories(include)
 
 add_library(${PROJECT_NAME} SHARED
+			src/Date.cpp
+			src/Book.cpp
 			src/BookShelf.cpp)
 
 add_executable(main src/main.cpp)
